@@ -1,6 +1,6 @@
 package org.ds.nocoding.logging.jdk;
 
-import com.dd.logging.Log;
+import org.ds.nocoding.logging.Log;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;

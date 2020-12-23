@@ -1,6 +1,6 @@
 package org.ds.nocoding.logging;
 
-import com.dd.logging.jdk.Jdk14LoggingImpl;
+import org.ds.nocoding.logging.jdk.Jdk14LoggingImpl;
 
 import java.lang.reflect.Constructor;
 

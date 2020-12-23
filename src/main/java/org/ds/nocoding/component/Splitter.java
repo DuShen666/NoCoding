@@ -1,6 +1,6 @@
 package org.ds.nocoding.component;
 
-import com.dd.Component;
+import org.ds.nocoding.Component;
 
 import java.util.List;
 

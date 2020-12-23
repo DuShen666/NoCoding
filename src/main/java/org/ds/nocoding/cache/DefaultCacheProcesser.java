@@ -1,7 +1,7 @@
 package org.ds.nocoding.cache;
 
-import com.dd.Property;
-import com.dd.component.AbstractComponent;
+import org.ds.nocoding.Property;
+import org.ds.nocoding.component.AbstractComponent;
 
 import java.util.HashMap;
 import java.util.Map;

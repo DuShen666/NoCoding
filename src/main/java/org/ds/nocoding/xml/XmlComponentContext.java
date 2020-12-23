@@ -44,8 +44,10 @@ public class XmlComponentContext implements ComponentContext {
         Collection<Element> elements = elementLoader.getElements();
         for (Element element : elements) {
             String id = element.attributeValue("id");
-            if (id!=null&&!"".equalsIgnoreCase(id)){
-                String className = element.attributeValue("class");
+            String className = element.attributeValue("class");
+
+            if (id!=null&&!"".equalsIgnoreCase(id)&&className!=null&&!"".equalsIgnoreCase(className)){
+
                 String[] split = className.split("\\.");
                 if (split.length>0){
                     id = split[0];
@@ -62,7 +64,10 @@ public class XmlComponentContext implements ComponentContext {
             String id = element.attributeValue("id");
             String nextId = element.attributeValue("next");
             if (nextId!=null&&!"".equalsIgnoreCase(nextId)){
-                components.get(id).setNext(components.get(nextId));
+                Component component = components.get(id);
+                if (component!=null){
+                    component.setNext(components.get(nextId));
+                }
             }
         }
     }

@@ -1,7 +1,7 @@
 package org.ds.nocoding.component;
 
-import com.dd.Component;
-import com.dd.Property;
+import org.ds.nocoding.Component;
+import org.ds.nocoding.Property;
 
 import java.util.Set;
 

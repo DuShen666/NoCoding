@@ -1,8 +1,9 @@
 package org.ds.nocoding.view;
 
-import com.dd.Component;
-import com.dd.logging.Log;
-import com.dd.logging.LogFactory;
+
+import org.ds.nocoding.Component;
+import org.ds.nocoding.logging.Log;
+import org.ds.nocoding.logging.LogFactory;
 
 import java.lang.reflect.Constructor;
 import java.util.Arrays;

@@ -25,7 +25,7 @@ public class XMLDocumentHolder implements DocumentHolder {
     private Document readDocument(String filePath) {
         Document doc = null;
         try {
-            SAXReader reader = new SAXReader(true);//借用dom4j的解析器
+            SAXReader reader = new SAXReader(false);//借用dom4j的解析器
             File xmlFile = new File(filePath); //根据路径创建文件
 
             doc = reader.read(xmlFile);//用dom4j自带的reader读取去读返回一个Document
