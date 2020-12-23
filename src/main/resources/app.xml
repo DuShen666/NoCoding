@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<app>
+    <component id="reveiver" name="Receiver" next="auth">
+        <properties>
+            <option key="配置1" value="a" />
+        </properties>
+    </component>
+    <component id="auth" name="AuthFilter">
+        <properties>
+            <option key="配置1" value="a" />
+        </properties>
+    </component>
+
+
+</app>
