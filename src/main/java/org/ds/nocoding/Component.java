@@ -1,5 +1,7 @@
 package org.ds.nocoding;
 
+import java.util.Collection;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -18,4 +20,10 @@ public interface Component {
     Component getNext();
 
     void setNext(Component next);
+
+    void putPoint(Point point);
+
+    Map<String,Point> getPoints();
+
+    Point getPoint(String name);
 }

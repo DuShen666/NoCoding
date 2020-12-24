@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <app>
-    <component id="reveiver" name="Receiver" next="auth">
+    <component id="reveiver" name="Receiver">
         <properties>
-            <option key="配置1" value="a" />
+            <option name="配置1" value="a" />
         </properties>
+        <points>
+            <point name="to" to="auth" />
+        </points>
     </component>
     <component id="auth" name="AuthFilter">
         <properties>
