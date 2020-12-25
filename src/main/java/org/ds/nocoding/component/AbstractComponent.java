@@ -4,12 +4,15 @@ import org.ds.nocoding.Component;
 import org.ds.nocoding.Point;
 import org.ds.nocoding.Property;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
 
 public abstract class AbstractComponent implements Component {
-    protected Component next;
-    protected Set<Property> properties;
-    protected Map<String,Point> points = new HashMap<>();
+    private Component next;
+    private Set<Property> properties;
+    private Map<String,Point> points = new HashMap<>();
 
     protected AbstractComponent(){}
 
@@ -39,7 +42,12 @@ public abstract class AbstractComponent implements Component {
 
     @Override
     public void putPoint(Point point) {
-        points.put(point.getName(),point);
+        points.put(point.name(),point);
+    }
+
+    @Override
+    public void putPoint(Point... points) {
+        Arrays.stream(points).distinct().forEach(this::putPoint);
     }
 
     @Override

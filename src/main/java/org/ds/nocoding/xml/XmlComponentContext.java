@@ -2,22 +2,19 @@ package org.ds.nocoding.xml;
 
 import org.dom4j.Document;
 import org.dom4j.Element;
-import org.ds.nocoding.Component;
-import org.ds.nocoding.ComponentContext;
-import org.ds.nocoding.ComponentFactory;
-import org.ds.nocoding.DefaultComponentFactory;
+import org.ds.nocoding.*;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
-public class XmlComponentContext implements ComponentContext {
+public class XmlComponentContext implements ApplicationContext {
 
     protected ElementLoader elementLoader = new ElementLoaderImpl();
 
     protected DocumentHolder documentHolder = new XMLDocumentHolder();
 
     protected Map<String, Component> components = new HashMap<>();
+
+    protected List<Point> points = new ArrayList<>();
 
     protected ComponentFactory componentFactory = new DefaultComponentFactory();
 
@@ -27,6 +24,7 @@ public class XmlComponentContext implements ComponentContext {
         Document document = documentHolder.getDocument(filePath);
         elementLoader.addElements(document);
         createComponents();
+
     }
 
     @Override
