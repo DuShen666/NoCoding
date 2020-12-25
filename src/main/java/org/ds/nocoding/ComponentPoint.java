@@ -55,13 +55,13 @@ public class ComponentPoint implements Point {
     }
 
     @Override
-    public void setOnRequestListener(OnRequestListener listener) {
-        this.onRequestListener = listener;
+    public OnRequestListener getOnRequestListener() {
+        return onRequestListener;
     }
 
     @Override
-    public OnRequestListener getOnRequestListener() {
-        return onRequestListener;
+    public void setOnRequestListener(OnRequestListener listener) {
+        this.onRequestListener = listener;
     }
 
     /**

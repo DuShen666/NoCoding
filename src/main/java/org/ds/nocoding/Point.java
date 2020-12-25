@@ -12,13 +12,13 @@ public interface Point {
 
     boolean connect(Point target);
 
+    OnRequestListener getOnRequestListener();
+
     void setOnRequestListener(OnRequestListener listener);
 
-    OnRequestListener getOnRequestListener();
+    Iterator<Point> getNeighborInterator();
 
     interface OnRequestListener extends EventListener {
         void onRequest(ServerRequest request, ServerResponse response);
     }
-
-    Iterator<Point> getNeighborInterator();
 }

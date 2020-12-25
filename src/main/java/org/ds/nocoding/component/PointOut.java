@@ -16,12 +16,12 @@ public class PointOut extends ComponentPoint {
         super(name);
     }
 
-    public void out(ServerRequest request,ServerResponse response){
+    public void out(ServerRequest request, ServerResponse response) {
         Iterator<Point> neighborIterator = getNeighborInterator();
-        while (neighborIterator.hasNext()){
+        while (neighborIterator.hasNext()) {
             Point next = neighborIterator.next();
             if (next.getOnRequestListener() != null) {
-                next.getOnRequestListener().onRequest(request,response);
+                next.getOnRequestListener().onRequest(request, response);
             }
         }
     }

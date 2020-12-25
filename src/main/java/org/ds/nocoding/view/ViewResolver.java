@@ -12,6 +12,13 @@ public class ViewResolver {
 
     private static final Log LOG = LogFactory.getLog(ViewResolver.class);
 
+    public static void main(String[] args) {
+        ViewResolver viewResolver = new ViewResolver();
+//        Model resolve = viewResolver.resolve(PermissionFilter.class);
+
+
+    }
+
     public Model resolve(Class<? extends Component> clazz) {
         Constructor<?>[] constructors = clazz.getConstructors();
 
@@ -27,16 +34,9 @@ public class ViewResolver {
         Class<?>[] parameterTypes = constructor.getParameterTypes();
         String[] parameters = Arrays.stream(parameterTypes).map(Class::getCanonicalName).toArray(String[]::new);
 
-        LOG.error("数组："+Arrays.toString(parameters));
+        LOG.error("数组：" + Arrays.toString(parameters));
 
         return null;
-
-    }
-
-    public static void main(String[] args) {
-        ViewResolver viewResolver = new ViewResolver();
-//        Model resolve = viewResolver.resolve(PermissionFilter.class);
-
 
     }
 }

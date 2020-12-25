@@ -11,8 +11,7 @@ import org.ds.nocoding.component.ServerResponse;
 public class RequestProcessor {
 
 
-
-    void process(ServerRequest request, ServerResponse response){
+    void process(ServerRequest request, ServerResponse response) {
 
     }
 }

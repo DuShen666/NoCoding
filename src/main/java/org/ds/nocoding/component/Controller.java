@@ -4,6 +4,6 @@ import org.ds.nocoding.Component;
 
 public interface Controller extends Component {
 
-    void doService(ServerRequest request,ServerResponse response);
+    void doService(ServerRequest request, ServerResponse response);
 
 }

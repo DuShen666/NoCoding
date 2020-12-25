@@ -4,13 +4,15 @@ import org.ds.nocoding.ComponentPoint;
 
 public abstract class AbstractFilter extends AbstractComponent implements Filter {
 
-    public AbstractFilter(){
+
+    protected AbstractFilter(String name) {
+        super(name);
         ComponentPoint in = new ComponentPoint("in");
         ComponentPoint out = new ComponentPoint("out");
 
         in.setOnRequestListener((request, response) -> {
-            process(request,response);
-            out.getOnRequestListener().onRequest(request,response);
+            process(request, response);
+            out.getOnRequestListener().onRequest(request, response);
         });
     }
 

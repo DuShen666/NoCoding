@@ -1,6 +1,5 @@
 package org.ds.nocoding.cache;
 
-import org.ds.nocoding.Property;
 import org.ds.nocoding.component.AbstractComponent;
 
 import java.util.HashMap;
@@ -11,8 +10,8 @@ public class DefaultCacheProcesser extends AbstractComponent implements CachePro
 
     private final Map<String, Object> CACHE = new HashMap<>();
 
-    protected DefaultCacheProcesser(Set<Property> properties) {
-        super(properties);
+    protected DefaultCacheProcesser(String name) {
+        super(name);
     }
 
     @Override

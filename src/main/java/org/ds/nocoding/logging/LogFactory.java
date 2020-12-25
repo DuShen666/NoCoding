@@ -11,12 +11,12 @@ public final class LogFactory {
         tryImplementation(LogFactory::useJdkLogging);
     }
 
-    public static synchronized void useJdkLogging() {
-        setImplementation(Jdk14LoggingImpl.class);
-    }
-
     private LogFactory() {
         // disable construction
+    }
+
+    public static synchronized void useJdkLogging() {
+        setImplementation(Jdk14LoggingImpl.class);
     }
 
     public static Log getLog(Class<?> clazz) {

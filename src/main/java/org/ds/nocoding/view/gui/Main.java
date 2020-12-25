@@ -13,13 +13,13 @@ public class Main {
 
     }
 
-    public static void createAndShowGUI(){
+    public static void createAndShowGUI() {
         JFrame.setDefaultLookAndFeelDecorated(true);
         JFrame jFrame = new JFrame();
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 
-        jFrame.setSize(200,200);
+        jFrame.setSize(200, 200);
 //        jFrame.pack();
         jFrame.setVisible(true);
     }

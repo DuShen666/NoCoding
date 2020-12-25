@@ -10,7 +10,8 @@ import org.ds.nocoding.component.*;
  */
 public class AuthFilter extends AbstractFilter {
 
-    public AuthFilter(){
+    public AuthFilter(String name) {
+        super(name);
         initPoint();
     }
 
@@ -19,7 +20,7 @@ public class AuthFilter extends AbstractFilter {
         System.out.println("AuthFilter 开始工作了");
     }
 
-    private void initPoint(){
+    private void initPoint() {
         ComponentPoint a = new PointIn("A");
         ComponentPoint b = new PointOut("B");
         ComponentPoint c = new ComponentPoint("C");
@@ -28,7 +29,7 @@ public class AuthFilter extends AbstractFilter {
         b.setOnRequestListener((request, response) -> System.out.println("b 进来数据了"));
         c.setOnRequestListener((request, response) -> System.out.println("c 进来数据了"));
 
-        putPoint(a,b,c);
+        putPoint(a, b, c);
     }
 
 

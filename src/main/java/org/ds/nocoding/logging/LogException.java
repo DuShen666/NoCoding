@@ -1,6 +1,6 @@
 package org.ds.nocoding.logging;
 
-public class LogException extends RuntimeException{
+public class LogException extends RuntimeException {
 
     public LogException() {
         super();
