@@ -2,15 +2,15 @@ package org.ds.nocoding.view;
 
 
 import org.ds.nocoding.Component;
-import org.ds.nocoding.logging.Log;
-import org.ds.nocoding.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.lang.reflect.Constructor;
 import java.util.Arrays;
 
 public class ViewResolver {
 
-    private static final Log LOG = LogFactory.getLog(ViewResolver.class);
+    private static final Logger logger = LoggerFactory.getLogger(ViewResolver.class);
 
     public static void main(String[] args) {
         ViewResolver viewResolver = new ViewResolver();
@@ -34,7 +34,7 @@ public class ViewResolver {
         Class<?>[] parameterTypes = constructor.getParameterTypes();
         String[] parameters = Arrays.stream(parameterTypes).map(Class::getCanonicalName).toArray(String[]::new);
 
-        LOG.error("数组：" + Arrays.toString(parameters));
+        logger.error("数组：" + Arrays.toString(parameters));
 
         return null;
 

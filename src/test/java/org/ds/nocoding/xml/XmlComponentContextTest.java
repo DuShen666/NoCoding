@@ -1,6 +1,7 @@
 package org.ds.nocoding.xml;
 
 import org.ds.nocoding.Component;
+import org.ds.nocoding.RequestProcessor;
 import org.junit.jupiter.api.Test;
 
 import javax.xml.bind.JAXBContext;
@@ -33,5 +34,13 @@ class XmlComponentContextTest {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @Test
+    void request(){
+
+        XmlApplicationContext xmlComponentContext = new XmlApplicationContext("app.xml");
+        RequestProcessor requestProcessor = new RequestProcessor(xmlComponentContext);
+        requestProcessor.process(null,null);
     }
 }

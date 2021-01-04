@@ -1,7 +1,11 @@
 package org.ds.nocoding.component.impl;
 
-import org.ds.nocoding.ComponentPoint;
-import org.ds.nocoding.component.*;
+import org.ds.nocoding.component.AbstractComponent;
+import org.ds.nocoding.component.AbstractFilter;
+import org.ds.nocoding.component.ServerRequest;
+import org.ds.nocoding.component.ServerResponse;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * 12/24/20 12:53 PM
@@ -10,27 +14,21 @@ import org.ds.nocoding.component.*;
  */
 public class AuthFilter extends AbstractFilter {
 
+    private static final Logger logger = LoggerFactory.getLogger(AuthFilter.class);
+
     public AuthFilter(String name) {
         super(name);
-        initPoint();
+        initOptions();
+    }
+
+    private void initOptions(){
+        properties().setProperty("HeaderKey","Authorization");
     }
 
     @Override
-    protected void process(ServerRequest request, ServerResponse response) {
-        System.out.println("AuthFilter 开始工作了");
+    public void work(ServerRequest request, ServerResponse response) {
+        super.work(request,response);
+        logger.debug("AuthFilter 开始工作了");
     }
-
-    private void initPoint() {
-        ComponentPoint a = new PointIn("A");
-        ComponentPoint b = new PointOut("B");
-        ComponentPoint c = new ComponentPoint("C");
-
-        a.setOnRequestListener((request, response) -> System.out.println("a 进来数据了"));
-        b.setOnRequestListener((request, response) -> System.out.println("b 进来数据了"));
-        c.setOnRequestListener((request, response) -> System.out.println("c 进来数据了"));
-
-        putPoint(a, b, c);
-    }
-
 
 }

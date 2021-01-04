@@ -2,6 +2,7 @@ package org.ds.nocoding.xml;
 
 import org.ds.nocoding.*;
 
+import java.net.URL;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -20,6 +21,10 @@ public class XmlApplicationContext implements ApplicationContext {
 
 
     public XmlApplicationContext(String filePath) {
+        URL resource = getClass().getClassLoader().getResource(filePath);
+        if (resource!=null){
+            filePath = resource.getPath();
+        }
         applicationDefinition = xmlParser.parse(filePath);
         createComponents();
     }
@@ -32,6 +37,11 @@ public class XmlApplicationContext implements ApplicationContext {
     @Override
     public boolean containsComponent(String id) {
         return components.get(id) != null;
+    }
+
+    @Override
+    public Map<String, Component> getComponents() {
+        return components;
     }
 
     private void createComponents() {

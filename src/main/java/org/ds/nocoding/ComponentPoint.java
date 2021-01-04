@@ -1,5 +1,6 @@
 package org.ds.nocoding;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -15,7 +16,7 @@ public class ComponentPoint implements Point {
 
     private String name;
 
-    private List<Edge> edgeList;//到该顶点邻接点的边,实际以java.util.LinkedList存储
+    private List<Edge> edgeList = new ArrayList<>();//到该顶点邻接点的边,实际以java.util.LinkedList存储
 
     public ComponentPoint(String name) {
         this.name = name;

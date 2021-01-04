@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <app>
     <components>
-        <component id="reveiver" class="Receiver">
+        <component id="reveiver" class="org.ds.nocoding.component.Receiver">
             <option name="配置1" value="a"/>
         </component>
-        <component id="auth" class="AuthFilter">
+        <component id="auth" class="org.ds.nocoding.component.impl.AuthFilter">
             <option name="配置1" value="a"/>
         </component>
     </components>
 
     <lines>
-        <line component="reveiver" point="a">
-            <to component="auth" point="a"/>
-            <to component="auth" point="a"/>
-            <to component="auth" point="a"/>
+        <line component="reveiver" point="out">
+            <to component="auth" point="in"/>
         </line>
     </lines>
 </app>

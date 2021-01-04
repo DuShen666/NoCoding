@@ -7,15 +7,15 @@ public abstract class AbstractFilter extends AbstractComponent implements Filter
 
     protected AbstractFilter(String name) {
         super(name);
-        ComponentPoint in = new ComponentPoint("in");
-        ComponentPoint out = new ComponentPoint("out");
+        PointIn in = new PointIn("in");
+        PointOut out = new PointOut("out");
 
         in.setOnRequestListener((request, response) -> {
-            process(request, response);
-            out.getOnRequestListener().onRequest(request, response);
+            work(request, response);
+            out.out(request, response);
         });
-    }
 
-    protected abstract void process(ServerRequest request, ServerResponse response);
+        putPoint(in,out);
+    }
 
 }
